@@ -1,6 +1,6 @@
 let mode='ops';
 const ARCHIVE_ALL=(typeof ARCHIVE!=='undefined'?ARCHIVE:[]).concat(typeof ARCHIVE2!=='undefined'?ARCHIVE2:[]);
-const PEOPLE_ALL=(typeof PEOPLE!=='undefined'?PEOPLE:[]).concat(typeof PEOPLE2!=='undefined'?PEOPLE2:[]);
+const PEOPLE_ALL=(typeof PEOPLE!=='undefined'?PEOPLE:[]).concat(typeof PEOPLE2!=='undefined'?PEOPLE2:[]).concat(typeof PEOPLE3!=='undefined'?PEOPLE3:[]);
 const grid=document.getElementById('grid'),q=document.getElementById('q'),
 fC=document.getElementById('fCountry'),fCat=document.getElementById('fCategory'),
 fS=document.getElementById('fStatus'),fE=document.getElementById('fEra'),
