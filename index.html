@@ -4,43 +4,50 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>THE ARCHIVE TRUTH — Western Covert Operations Archive</title>
-<meta name="description" content="A minimal searchable archive of 50 documented Western covert operations, human experiments, and surveillance programs.">
+<meta name="description" content="Searchable archive of 50 documented Western covert operations + key figures. Declassified, proven, labeled.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="topbar">
-<div class="wrap">
-<h1>THE ARCHIVE TRUTH</h1>
-<p class="subtitle">50 documented Western covert operations · searchable · educational</p>
+<div class="hero">
+<div class="wrap hero-inner">
+<div class="badge">EDUCATIONAL • DECLASSIFIED • SOURCED</div>
+<h1>THE ARCHIVE <span>TRUTH</span></h1>
+<p class="lede">50 operations. 14 people. Western covert power — from MKUltra to PRISM — with receipts, not rumors.</p>
+<div class="stats"><div><b id="stOps">50</b><i>operations</i></div><div><b id="stPeople">14</b><i>figures</i></div><div><b>5</b><i>eyes + NATO</i></div><div><b>1945→</b><i>coverage</i></div></div>
+<div class="tabs"><button id="tabOps" class="on">Operations</button><button id="tabPeople">People</button><a href="#about">About ↓</a></div>
 <div class="controls">
-<input id="q" type="search" placeholder="Search: e.g. MKUltra, Chile, surveillance, torture…" autocomplete="off">
+<input id="q" type="search" placeholder="Search archive: e.g. Chile, LSD, GCHQ, torture, Epstein…" autocomplete="off">
 <div class="filters">
 <select id="fCountry"><option value="">All regions</option></select>
 <select id="fCategory"><option value="">All categories</option></select>
-<select id="fStatus"><option value="">All statuses</option></select>
-<select id="fEra"><option value="">All eras</option><option value="1940s">1940s</option><option value="1950s">1950s</option><option value="1960s">1960s</option><option value="1970s">1970s</option><option value="1980s">1980s</option><option value="2000s">2000s+</option></select>
-<select id="fSort"><option value="year">Sort: oldest</option><option value="year-desc">Sort: newest</option><option value="az">Sort: A–Z</option></select>
+<select id="fStatus"><option value="">All evidence levels</option></select>
+<select id="fEra"><option value="">All eras</option><option>1940s</option><option>1950s</option><option>1960s</option><option>1970s</option><option>1980s</option><option>1990s</option><option>2000s+</option></select>
+<select id="fSort"><option value="year">Oldest → newest</option><option value="year-desc">Newest → oldest</option><option value="az">A–Z</option></select>
 </div>
 <div class="meta"><span id="count"></span><button id="reset">Reset</button></div>
 </div>
 </div>
-</header>
-<main class="wrap">
-<div class="notice">
-<strong>Educational archive.</strong> Entries summarize operations documented in declassified files, court rulings, official apologies, or major leak investigations. “Disputed / proposed” items are labeled. This is not a conspiracy list.
-<a href="#about">About + sources approach ↓</a>
 </div>
+<main class="wrap">
+<div class="legend"><span class="dot proven"></span>Proven / declassified <span class="dot disputed"></span>Disputed / proposed <span class="dot lore"></span>No-evidence correction</div>
 <div id="grid" class="grid"></div>
 <section id="about" class="about">
-<h2>About this archive</h2>
-<p>Scope: USA, UK, France, NATO / Five Eyes, 1945–present, plus colonial wars and Cold War regime-change operations. Each card shows years, actors, category and evidentiary status.</p>
-<p>How to verify: search national archives (US NARA, UK National Archives), Church Committee reports, Senate hearings, EU STOA ECHELON reports, court verdicts, Snowden/PCLOB reports. No secret claims without a paper trail are listed as proven.</p>
-<p>Contribute: open an issue / PR at <code>GENERALGOVOU/THE-ARCHIVE-TRUTH</code> with a primary source.</p>
+<h2>How this archive works</h2>
+<div class="cols">
+<div><h3>What counts as proven?</h3><p>Declassified memos, Church / Rockefeller / Tower reports, court convictions, official apologies, authenticated leaks (Snowden). Proposed plans (Northwoods) and contested cases (Strategy of Tension) are labeled — never as proven ops.</p></div>
+<div><h3>People section</h3><p>Targets (Castro, King, Hampton), architects (Dulles, Gottlieb, Cameron), revealers (Snowden), plus controversial names with strict labels. Epstein intel ties: <b>unproven</b>. Terry Davis: <b>no documented CIA link</b> — included to stop misinformation.</p></div>
+<div><h3>Verify yourself</h3><p>Start with NARA, UK National Archives, FRUS volumes, Church Committee Books I-III, PCLOB reports. PRs must cite a primary source.</p></div>
+</div>
 </section>
 </main>
 <div id="modal" class="modal hidden"><div class="sheet"><button id="close">✕ Close</button><div id="sheetBody"></div></div></div>
-<footer class="wrap foot"><small>THE ARCHIVE TRUTH · static site · no tracking · MIT · 50 entries v1</small></footer>
+<footer class="wrap foot"><small>THE ARCHIVE TRUTH · static, no tracking · MIT · v2 — operations + people</small></footer>
 <script src="data.js"></script>
+<script src="extra-a.js"></script>
+<script src="extra-b.js"></script>
+<script src="extra-c.js"></script>
+<script src="extra-d.js"></script>
+<script src="people.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
