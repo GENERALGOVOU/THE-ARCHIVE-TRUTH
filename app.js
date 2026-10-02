@@ -55,14 +55,15 @@ function render(){
   grid.innerHTML=list.map(e=>`<article class="card"><h3>${e.name}</h3><div class="years">${e.role} · ${e.years}</div><div class="status ${cls(e.status)}">● ${e.status}</div><p>${e.summary}</p><button data-kind="people" data-id="${e.id}">Open file →</button></article>`).join('')||'<p>No results.</p>';
  }
 }
+function links(qry){let q=encodeURIComponent(qry);return `<div class="kv"><b>Proof / dig deeper:</b><br><a href="https://en.wikipedia.org/wiki/Special:Search?search=${q}" target="_blank" rel="noopener">Wikipedia search</a> · <a href="https://catalog.archives.gov/search?q=${q}" target="_blank" rel="noopener">NARA catalog</a> · <a href="https://www.youtube.com/results?search_query=${q}+declassified+documentary" target="_blank" rel="noopener">Video search</a><br><small>Use primary sources in results (hearings, reports, court records), not random uploads. No images embedded to avoid copyright/broken links.</small></div>`}
 grid.addEventListener('click',ev=>{
  let b=ev.target.closest('button[data-id]');if(!b)return;
  if(b.dataset.kind==='ops'){
   let e=ARCHIVE_ALL.find(x=>x.id===b.dataset.id);
-  sheetBody.innerHTML=`<h2>${e.title}</h2><div class="status ${cls(e.status)}">● ${e.status}</div><div class="kv"><b>Years:</b> ${e.years}<br><b>Where:</b> ${e.countries.join(', ')}<br><b>Who:</b> ${e.agencies.join(', ')}<br><b>Type:</b> ${e.category}</div><h3>Full dossier</h3><p>${full(e)}</p><h3>Why it matters</h3><p>${e.summary}</p><div class="kv"><b>Start here (primary sources):</b> ${e.sources}</div>`;
+  sheetBody.innerHTML=`<h2>${e.title}</h2><div class="status ${cls(e.status)}">● ${e.status}</div><div class="kv"><b>Years:</b> ${e.years}<br><b>Where:</b> ${e.countries.join(', ')}<br><b>Who:</b> ${e.agencies.join(', ')}<br><b>Type:</b> ${e.category}</div><h3>Full dossier</h3><p>${full(e)}</p><h3>Why it matters</h3><p>${e.summary}</p><div class="kv"><b>Start here (primary sources):</b> ${e.sources}</div>${links(e.title)}`;
  }else{
   let e=PEOPLE_ALL.find(x=>x.id===b.dataset.id);
-  sheetBody.innerHTML=`<h2>${e.name}</h2><div class="status ${cls(e.status)}">● ${e.status}</div><div class="kv"><b>Role:</b> ${e.role}<br><b>Years:</b> ${e.years}</div><h3>File</h3><p>${e.details}</p><div class="kv"><b>Start here:</b> ${e.sources}</div>`;
+  sheetBody.innerHTML=`<h2>${e.name}</h2><div class="status ${cls(e.status)}">● ${e.status}</div><div class="kv"><b>Role:</b> ${e.role}<br><b>Years:</b> ${e.years}</div><h3>File</h3><p>${e.details}</p><div class="kv"><b>Start here:</b> ${e.sources}</div>${links(e.name)}`;
  }
  modal.classList.remove('hidden');
 });
